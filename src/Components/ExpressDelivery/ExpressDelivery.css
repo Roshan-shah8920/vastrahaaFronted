@@ -1,0 +1,101 @@
+/* General container */
+.express-delivery-container {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Header */
+  .express-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .express-header h1 {
+    font-size: 2.8em;
+    color: #333;
+  }
+  
+  .express-header p {
+    font-size: 1.2em;
+    color: #666;
+  }
+  
+  /* Info Section */
+  .delivery-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+  
+  .info-item {
+    text-align: center;
+    width: 30%;
+  }
+  
+  .info-item img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+  }
+  
+  .info-item h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .info-item p {
+    color: #777;
+    font-size: 1em;
+  }
+  
+  /* Delivery Details Section */
+  .delivery-details {
+    margin-top: 50px;
+    text-align: center;
+  }
+  
+  .delivery-details h2 {
+    font-size: 2.2em;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .details-list {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .detail-item {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 30%;
+    text-align: center;
+  }
+  
+  .detail-item h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .detail-item p {
+    font-size: 1em;
+    color: #777;
+  }
+  
+  /* Footer */
+  .express-footer {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 1.1em;
+    color: #888;
+  }
+  

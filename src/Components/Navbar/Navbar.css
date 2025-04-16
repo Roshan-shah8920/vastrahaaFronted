@@ -1,0 +1,255 @@
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+.list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #fff;
+    padding: 15px 7%;
+}
+.search-box{
+    display: flex;
+    align-items: center;
+    background: #e2dbdb;
+    padding: 10px 20px;
+    border-radius: 50px;
+}
+.search-box input{
+    padding: 6px;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    color: #fff;
+    max-width: 200px;
+}
+.icon{
+    width: 50px;
+    font-size: 30px;
+}
+
+
+
+.list {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .submenu {
+    list-style: none;
+    margin-top: 10px;
+    padding-left: 20px;
+    background-color: #f9f9f9;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    z-index: 100;
+  }
+  
+  .submenu li {
+    padding: 8px 15px;
+    cursor: pointer;
+  }
+  
+  .submenu li:hover {
+    background-color: #eee;
+  }
+  
+  .navbar.sticky {
+    position: sticky;
+    top: 0; 
+    z-index: 1000; 
+    background-color: white; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    width: 100%;
+    transition: top 0.3s; 
+} */
+
+
+/* Hamburger Button */
+/* .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    background: none;
+    border: none;
+    gap: 4px;
+  }
+  
+  .hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #000;
+    transition: all 0.3s ease;
+  }
+   */
+ 
+
+  /* General Styling */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 7%;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.img img {
+  width: 120px;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 10px;
+}
+
+.bar {
+  height: 3px;
+  width: 25px;
+  background-color: black;
+  margin: 4px 0;
+  transition: 0.3s;
+}
+
+/* Navigation Lists */
+.list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 20px;
+}
+
+.list li {
+  position: relative;
+  list-style: none;
+}
+
+/* Dropdown Styling */
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  min-width: 150px;
+  z-index: 10;
+}
+
+.submenu .items {
+  padding: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.submenu .items:hover {
+  background-color: #f0f0f0;
+}
+
+/* Search Box */
+.search-box {
+  display: flex;
+  align-items: center;
+  background-color: #f2f2f2; /* light grey background */
+  border-radius: 30px;
+  padding: 8px 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* soft shadow */
+  transition: all 0.3s ease;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  padding: 6px 10px;
+  background: transparent;
+  font-size: 16px;
+}
+
+.search-box .icon {
+  font-size: 20px;
+  color: #333;
+  margin-left: 8px;
+}
+
+
+/* User Area */
+.user {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .list {
+    display: none;
+  }
+
+  .list.open {
+    display: none;
+  }
+
+  .user {
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  /* 🔧 Fix starts here */
+  .search-box {
+    width: auto;              /* Don't force full width */
+    margin: 0;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .search-box input {
+    width: auto;
+    flex: none;
+    max-width: 150px;         /* Set a max-width */
+  }
+
+  .search-box .icon {
+    font-size: 20px;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+  }
+}
+.li{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}

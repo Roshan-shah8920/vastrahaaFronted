@@ -1,0 +1,10 @@
+.heading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* margin-top: 50px; */
+}
+.related{
+    margin-left: -120px;
+}

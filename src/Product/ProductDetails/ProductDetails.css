@@ -1,0 +1,22 @@
+.imageProduct{
+    width: 350px;
+    height: 550px;
+}
+.btn1{
+    width: 450px;
+    border-radius: 20px;
+    font-weight: bolder;
+    font-size: 25px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 70px;
+    margin-top: 5%;
+}

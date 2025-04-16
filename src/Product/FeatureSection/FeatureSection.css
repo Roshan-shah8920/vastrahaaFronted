@@ -1,0 +1,15 @@
+.feateru{
+    padding: 10px 7%;
+    cursor: pointer;
+}
+.text-xl{
+    font-size: 30px;
+    cursor: pointer;
+}
+.shipping{
+    margin-top: 10px;
+    cursor: pointer;
+}
+.circle{
+    border-radius: 50%;
+}

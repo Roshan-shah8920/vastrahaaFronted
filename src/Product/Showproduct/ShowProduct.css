@@ -1,0 +1,43 @@
+.imgContainer{
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    background-color: #bebdbd;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+
+}
+.button {
+    border: none;
+    outline: none;
+    
+}
+.item{
+    width: 80px;
+    padding: 10px;
+}
+img{
+    gap: 30px;
+}
+.image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.card22:hover{
+    width: 250px;
+}
+
+  
+  .horizontal-scroll-container::-webkit-scrollbar {
+    display: none;
+  }
+  
+
+
+

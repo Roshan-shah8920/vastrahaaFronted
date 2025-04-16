@@ -1,0 +1,11 @@
+.profile {
+    max-width: 600px;
+    margin: 0 ;
+    padding: 10px 7%;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-left: 20px;
+  }
+  
