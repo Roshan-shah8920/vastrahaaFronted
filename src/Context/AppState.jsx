@@ -17,7 +17,7 @@ const AppState = (props) => {
     const [adminOrders, setAdminOrders] = useState([]);
 
     // const url = "http://localhost:5000/api"
-    const url = "https://vastrahaat-1.onrender.com/api"
+    const url = "https://vastrahaat-2.onrender.com/api/product/all"
 
     useEffect(() => {
         const fetchProduct = async (req, res) => {
