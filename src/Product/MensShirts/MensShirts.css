@@ -1,0 +1,49 @@
+.product-card {
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  .product-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-img-top {
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .product-card:hover .card-img-top {
+    transform: scale(1.05);
+  }
+  
+  .row.justify-content-center {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 55px; /* Larger gap for desktop view */
+  }
+  
+  .col-12, .col-sm-6, .col-md-4, .col-lg-3 {
+    padding: 0 10px; /* Padding to maintain spacing between cards */
+  }
+  
+  @media (max-width: 576px) {
+    .col-12 {
+      width: 48%;  /* Adjust to fit 2 products per row on mobile devices */
+      margin-bottom: 10px; /* Bottom margin to create spacing between rows */
+    }
+  
+    .row.justify-content-center {
+      gap: 10px; /* Smaller gap between items on mobile for better fitting */
+    }
+  }
+  
+  @media (min-width: 577px) {
+    .col-md-4, .col-lg-3 {
+      width: 25%;  /* 4 products per row for medium and larger screens */
+    }
+  }
+  

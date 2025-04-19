@@ -1,11 +1,17 @@
-import React, { useContext } from 'react'
-import "./womenProducts.css"
-import AppContext from '../../Context/AppContext'
+import React, { useState, useContext } from 'react';
+import "./womenProducts.css";
+import AppContext from '../../Context/AppContext';
 
-const womenProduct = () => {
-  const { product, addToCart } = useContext(AppContext)
+const WomenProduct = () => {
+  const { product, addToCart } = useContext(AppContext);
+  const womensProduct = product?.filter(item => item.category?.toLowerCase() === "jeans women");
   
-  const womensProduct = product?.filter(item => item.category?.toLowerCase() === "jeans women")
+  const [addedToCart, setAddedToCart] = useState([]);
+
+  const handleAddToCart = (item) => {
+    addToCart(item._id, item.title, item.finalPrice, 1, item.imgSrc);
+    setAddedToCart([...addedToCart, item._id]); // Track added items
+  };
 
   return (
     <div className="container-fluid p-0">
@@ -16,11 +22,14 @@ const womenProduct = () => {
       <div className="container">
         <div className="row justify-content-center">
           {womensProduct?.map((item) => (
-            <div className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" key={item._id}>
+            <div
+              className={`col-12 col-sm-6 col-md-4 col-lg-3 mb-4 product-card ${addedToCart.includes(item._id) ? 'added-to-cart' : ''}`}
+              key={item._id}
+            >
               <div className="card h-100 shadow-sm">
                 <img
                   src={item.imgSrc}
-                  className="card-img-top"
+                  className={`card-img-top ${addedToCart.includes(item._id) ? 'added-to-cart' : ''}`}
                   alt={item.title}
                   style={{ height: "250px", objectFit: "cover" }}
                 />
@@ -37,15 +46,7 @@ const womenProduct = () => {
                   </div>
                   <button
                     className="btn btn-warning mt-auto"
-                    onClick={() =>
-                      addToCart(
-                        item._id,
-                        item.title,
-                        item.finalPrice,
-                        1,
-                        item.imgSrc
-                      )
-                    }
+                    onClick={() => handleAddToCart(item)}
                   >
                     Add to Cart
                   </button>
@@ -56,7 +57,7 @@ const womenProduct = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default womenProduct
+export default WomenProduct;

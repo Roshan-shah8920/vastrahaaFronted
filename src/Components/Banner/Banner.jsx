@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import './Banner.css';
 
 const Banner = () => {
@@ -14,13 +14,22 @@ const Banner = () => {
     }
   };
 
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      scroll('right');
+    }, 5000); 
+
+    return () => clearInterval(interval); 
+  }, []);
+
   return (
     <div className="banner-wrapper">
       <button onClick={() => scroll('left')}>←</button>
       <div className="banner-container" ref={scrollRef}>
         <img src="banner.png" alt="banner1" />
-        <img src="banner.png" alt="banner2" />
-        <img src="banner.png" alt="banner3" />
+        <img src="image1.png" alt="banner2" />
+        <img src="image2.png" alt="banner3" />
       </div>
       <button onClick={() => scroll('right')}>→</button>
     </div>

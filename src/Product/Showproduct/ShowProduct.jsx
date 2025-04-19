@@ -1,9 +1,9 @@
 import React, { useContext, useRef } from 'react';
-import "./ShowProduct.css";
 import AppContext from '../../Context/AppContext';
 import { Link } from 'react-router-dom';
 import OneProduct from '../oneProduct/OneProduct';
 import FeatureSection from '../FeatureSection/FeatureSection';
+import './ShowProduct.css';
 
 const ShowProduct = () => {
   const { filterData } = useContext(AppContext);
@@ -17,6 +17,25 @@ const ShowProduct = () => {
     }
   };
 
+  // ✅ Loader Component
+  const Loader = () => (
+    <div style={{
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      height: "50vh"
+    }}>
+      <div className="spinner-border text-primary" role="status">
+        <span className="visually-hidden">Loading...</span>
+      </div>
+    </div>
+  );
+
+  // ✅ Show loader while data is not loaded
+  if (!filterData || filterData.length === 0) {
+    return <Loader />;
+  }
+
   // Filter based on gender
   const mensProducts = filterData?.filter(p => p.gender?.toLowerCase() === "men's collection");
   const womensProducts = filterData?.filter(p => p.gender?.toLowerCase() === "women's collection");
@@ -26,35 +45,45 @@ const ShowProduct = () => {
       <Link
         to={`/product/${product?._id}`}
         key={product?._id}
-        className='card'
-        style={{ width: "18rem", minWidth: "18rem" }}
+        className="product-card"
+        style={{
+          width: "18rem",
+          minWidth: "18rem",
+          textDecoration: "none",
+          color: "inherit",
+          border: "1px solid #ddd",
+          borderRadius: "8px",
+          overflow: "hidden",
+          backgroundColor: "#fff",
+          boxShadow: "0 4px 8px rgba(0,0,0,0.1)"
+        }}
       >
         <img
           src={product?.imgSrc}
-          className="card22 card-img-top"
           alt={product?.title}
-          style={{
-            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
-            borderRadius: "8px",
-            height: "250px",
-            objectFit: "cover"
-          }}
+
         />
-        <div className="card-body">
-          <p className="card-title" style={{ textDecoration: "underline" }}>
-            {product?.title}
-          </p>
-          <p className="card-title">{product?.description}</p>
-          <div className='d-flex align-items-center'>
-            <h5 className='text-success'>₹ {product?.finalPrice}</h5>
+
+        <div className="card-content">
+          <p style={{ fontWeight: "bold", textDecoration: "underline" }}>{product?.title}</p>
+          <p style={{ fontSize: "0.9rem", color: "#555" }}>{product?.description}</p>
+          <div style={{ display: "flex", alignItems: "center", marginTop: "0.5rem" }}>
+            <h5 style={{ color: "green", margin: 0 }}>₹ {product?.finalPrice}</h5>
             {product?.discount > 0 && (
               <>
-                <small className='text-muted ms-2' style={{ textDecoration: "line-through" }}>
+                <small style={{ textDecoration: "line-through", marginLeft: "8px", color: "#888" }}>
                   ₹ {product?.price}
                 </small>
-                <div className="badge item bg-danger mx-2">
+                <span style={{
+                  backgroundColor: "#dc3545",
+                  color: "#fff",
+                  padding: "2px 6px",
+                  borderRadius: "4px",
+                  marginLeft: "10px",
+                  fontSize: "0.75rem"
+                }}>
                   -{product?.discount}%
-                </div>
+                </span>
               </>
             )}
           </div>
@@ -65,13 +94,13 @@ const ShowProduct = () => {
 
   return (
     <>
-    <OneProduct/>
+      <OneProduct />
+
       {/* Men's Section */}
-      <h2 className=' text-center mt-5'>Men's Collection</h2>
-      <div className='d-flex justify-content-between align-items-center px-3'>
+      <h2 style={{ textAlign: "center", marginTop: "2rem" }}>Men's Collection</h2>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: "0 1rem" }}>
         <button className="btn btn-outline-secondary" onClick={() => scroll(mensScrollRef, -300)}>←</button>
         <div
-          className="horizontal-scroll-container"
           ref={mensScrollRef}
           style={{
             display: 'flex',
@@ -88,11 +117,10 @@ const ShowProduct = () => {
       </div>
 
       {/* Women's Section */}
-      <h2 className='text-center mt-5'>Women's Collection</h2>
-      <div className='d-flex justify-content-between align-items-center px-3'>
+      <h2 style={{ textAlign: "center", marginTop: "2rem" }}>Women's Collection</h2>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: "0 1rem" }}>
         <button className="btn btn-outline-secondary" onClick={() => scroll(womensScrollRef, -300)}>←</button>
         <div
-          className="horizontal-scroll-container"
           ref={womensScrollRef}
           style={{
             display: 'flex',
@@ -103,11 +131,12 @@ const ShowProduct = () => {
             maxWidth: '100%'
           }}
         >
-          {renderProducts(womensProducts)}
+          {womensProducts.length === 0 ? <p>No products available in Women's Collection</p> : renderProducts(womensProducts)}
         </div>
         <button className="btn btn-outline-secondary" onClick={() => scroll(womensScrollRef, 300)}>→</button>
       </div>
-      <FeatureSection/>
+
+      <FeatureSection />
     </>
   );
 };

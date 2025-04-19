@@ -7,31 +7,24 @@ const OneProduct = () => {
   const { product } = useContext(AppContext);
   const navigate = useNavigate();
 
-  console.log("Product:", product);
-
-  // Men's Jeans Product
-  const mensProduct = product
-    ?.filter(item => item.category?.toLowerCase() === "jeans mens")
-    ?.slice(0, 1);
-
-  // Men's Shirts Product (category "styling Shirt Mens")
-  const mensShirts = product?.filter(item => item?.category?.toLowerCase().includes("styling shirt mens"))?.[0];
-
-  // Women's Jeans Product
-  const womenProduct = product
-    ?.filter(item => item.category?.toLowerCase() === "jeans women")
-    ?.slice(0, 1);
-
-  // Women's Shirts Product
-  const womenShirts = product
-    ?.filter(item => item.category?.toLowerCase().trim() === "shirt women")
-    ?.slice(0, 1);
-
-  console.log("Women's Shirts:", womenShirts);
-
-  const handleImageClick = () => {
-    navigate('/mens-products');
+  // Helper Functions
+  const getFirstProductByCategory = (category) => {
+    return product?.filter(item => item.category?.toLowerCase() === category)?.slice(0, 1);
   };
+
+  const getProductContainsCategory = (category) => {
+    return product?.filter(item => item?.category?.toLowerCase().includes(category))?.[0];
+  };
+
+  // Get Products
+  const mensProduct = getFirstProductByCategory("jeans mens");
+  const mensShirts = getProductContainsCategory("styling shirt mens");
+  const womenProduct = getFirstProductByCategory("jeans women");
+  const womenShirts = getFirstProductByCategory("shirt women");
+
+  if (!product || product.length === 0) {
+    return <div className="text-center my-5">Loading products or no products found.</div>;
+  }
 
   return (
     <div>
@@ -52,84 +45,47 @@ const OneProduct = () => {
               </span>
             ))}
         </p>
-
       </div>
 
       <div className="d-flex justify-content-center gap-4 flex-wrap">
-        {/* Men's Product */}
+        {/* Men's Jeans */}
         {mensProduct?.map(item => (
           <div key={item._id} onClick={() => navigate('/mens-products')}>
-            <div className="card position-relative" style={{ width: "300px", cursor: "pointer" }}>
+            <div className="card product-card">
               <img
                 src={item?.imgSrc}
                 className="card-img-top"
-                alt="Men's Jeans"
-                style={{ height: "500px", objectFit: "cover" }}
+                alt={item?.title || "Men's Jeans"}
               />
-              <div
-                className="btn position-absolute"
-                style={{
-                  bottom: "15px",
-                  left: "20px",
-                  backgroundColor: "white",
-                  fontWeight: "bold",
-                  color: "#007bff "
-                }}
-              >
-                MENS JEANS
-              </div>
+              <div className="label-btn">MENS JEANS</div>
             </div>
           </div>
         ))}
 
-        {/* Men's Shirts Product */}
+        {/* Men's Shirts */}
         {mensShirts && (
           <div key={mensShirts._id} onClick={() => navigate('/mens-Shirt')}>
-            <div className="card position-relative" style={{ width: "300px", cursor: "pointer" }}>
+            <div className="card product-card">
               <img
                 src={mensShirts?.imgSrc}
                 className="card-img-top"
-                alt="Men's Shirt"
-                style={{ height: "500px", objectFit: "cover" }}
+                alt={mensShirts?.title || "Men's Shirt"}
               />
-              <div
-                className="btn position-absolute"
-                style={{
-                  bottom: "15px",
-                  left: "20px",
-                  backgroundColor: "white",
-                  fontWeight: "bold",
-                  color: "#007bff "
-                }}
-              >
-                MENS SHIRTS
-              </div>
+              <div className="label-btn">MENS SHIRTS</div>
             </div>
           </div>
         )}
 
-        {/* Women's Product */}
+        {/* Women's Jeans */}
         {womenProduct?.map(item => (
           <div key={item._id} onClick={() => navigate('/womens-products')}>
-            <div className="card" style={{ width: "300px", cursor: "pointer" }}>
+            <div className="card product-card">
               <img
                 src={item?.imgSrc}
                 className="card-img-top"
-                alt="Women's Jeans"
-                style={{ height: "500px", objectFit: "cover" }}
+                alt={item?.title || "Women's Jeans"}
               />
-              <div
-                className="btn position-absolute"
-                style={{
-                  bottom: "15px",
-                  left: "20px",
-                  backgroundColor: "white",
-                  fontWeight: "bold",
-                  color: "#007bff "
-                }}
-              >
-                WOMEN JEANS
-              </div>
+              <div className="label-btn">WOMEN JEANS</div>
             </div>
           </div>
         ))}
@@ -137,25 +93,13 @@ const OneProduct = () => {
         {/* Women's Shirts */}
         {womenShirts?.map(item => (
           <div key={item._id} onClick={() => navigate('/womens-Shirt')}>
-            <div className="card position-relative" style={{ width: "300px", cursor: "pointer" }}>
+            <div className="card product-card">
               <img
                 src={item?.imgSrc}
                 className="card-img-top"
-                alt="Women's Shirt"
-                style={{ height: "500px", objectFit: "cover" }}
+                alt={item?.title || "Women's Shirt"}
               />
-              <div
-                className="btn position-absolute"
-                style={{
-                  bottom: "15px",
-                  left: "20px",
-                  backgroundColor: "white",
-                  fontWeight: "bold",
-                  color: "#007bff"
-                }}
-              >
-                WOMEN SHIRT
-              </div>
+              <div className="label-btn">WOMEN SHIRT</div>
             </div>
           </div>
         ))}

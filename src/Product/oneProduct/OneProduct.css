@@ -1,54 +1,33 @@
-@keyframes fade-in-word {
-    0% {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  .heading22 h1 span,
-  .heading22 p span {
-    opacity: 0;
-    display: inline-block;
-    animation: fade-in-word 0.5s ease forwards;
-  }
-  
+.product-card {
+  width: 300px;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-  /* zomineffect */
+.product-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
 
-  .card {
-    overflow: hidden;
-    border-radius: 12px;
-    transform: scale(0.95);
-    opacity: 0;
-    animation: smoothZoom 1s ease-out forwards;
-  }
-  
-  /* Image styling */
-  .card img {
-    width: 100%;
-    height: auto;
-    transform: scale(1);
-    transition: transform 0.5s ease;
-  }
-  
-  /* Hover effect (optional) */
-  .card:hover img {
-    transform: scale(1.05);
-  }
-  
-  /* Actual animation from center, not top */
-  @keyframes smoothZoom {
-    0% {
-      transform: scale(0.8);
-      opacity: 0;
-    }
-    100% {
-      transform: scale(1);
-      opacity: 1;
-    }
-  }
-  
+.card-img-top {
+  height: 500px;
+  object-fit: cover;
+  transition: filter 0.3s ease;
+}
+
+.product-card:hover .card-img-top {
+  filter: brightness(85%);
+}
+
+.label-btn {
+  position: absolute;
+  bottom: 15px;
+  left: 20px;
+  background-color: #ffffffcc;
+  font-weight: bold;
+  color: #007bff;
+  padding: 8px 12px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}

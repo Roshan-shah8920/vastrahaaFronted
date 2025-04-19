@@ -42,8 +42,6 @@ const Footer = () => {
               marginLeft: "32px"
             }}>NEED HELP?</p>
             <ul className="li space-y-2 text-gray-700">
-              <li><a href="#">Order Status</a></li>
-              <li><a href="#">Delivery</a></li>
               <li><a href="#">Returns</a></li>
               <li><a href="#">FAQs</a></li>
               <li><a href="#">Shipping Policy</a></li>
@@ -58,8 +56,7 @@ const Footer = () => {
               marginLeft: "32px"
             }}>NEED HELP?</p>
             <ul className="li space-y-2 text-gray-700">
-              <li><a href="#">Order Status</a></li>
-              <li><a href="#">Delivery</a></li>
+             
               <li><a href="#">Returns</a></li>
               <li><a href="#">FAQs</a></li>
               <li><a href="#">Shipping Policy</a></li>
