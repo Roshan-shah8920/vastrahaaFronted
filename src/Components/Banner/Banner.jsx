@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './Banner.css';
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 const images = [
   '/image8.png',
@@ -11,6 +12,7 @@ const images = [
 ];
 
 const Banner = () => {
+  const navigate = useNavigate();
   const [current, setCurrent] = useState(0);
   const length = images.length;
   const timeoutRef = useRef(null);
@@ -27,6 +29,10 @@ const Banner = () => {
     timeoutRef.current = setTimeout(nextSlide, 5000);
     return () => clearTimeout(timeoutRef.current);
   }, [current]);
+
+  const handleBuyNow = () => {
+    navigate('/womens-Shirt');  // Navigate to ShowOrderProduct page
+  };
 
   return (
     <div className="hero-wrapper">
@@ -53,8 +59,7 @@ const Banner = () => {
           From design to delivery, we ensure quality and precision at every step.
         </p>
 
-        <button>Buy Know</button>
-
+        <button onClick={handleBuyNow}>Buy Now</button>
       </div>
       <div className="hero-right">
         <div className="slider-container">

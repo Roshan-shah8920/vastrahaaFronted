@@ -62,8 +62,8 @@ const Navbar = () => {
                             <ul className="submenu">
                                 <Link to={"/mens-Shirt"} className='items' onClick={() => filterbyCategory("t-shirts")}>T-Shirts</Link>
                                 <Link to={"/mens-products"} className='items' onClick={() => filterbyCategory("Jeans mens")}>Jeans mens</Link>
-                                <li className='items' onClick={() => filterbyCategory("Blazers")}>Blazers</li>
-                                <li className='items' onClick={() => filterbyCategory("suits")}>Suits</li>
+                                {/* <li className='items' onClick={() => filterbyCategory("Blazers")}>Blazers</li>
+                                <li className='items' onClick={() => filterbyCategory("suits")}>Suits</li> */}
                             </ul>
                         )}
                     </li>
@@ -77,15 +77,15 @@ const Navbar = () => {
                             <ul className="submenu">
                                 <Link to={"womens-products"} className='items' onClick={() => filterbyCategory("Jeans women")}>Jeans women</Link>
                                 <Link to={"/womens-Shirt "} className='items' onClick={() => filterbyCategory("tops")}>Shirt</Link>
-                                <li className='items' onClick={() => filterbyCategory("dresses")}>Dresses</li>
-                                <li className='items' onClick={() => filterbyCategory("trousers")}>Trousers</li>
+                                {/* <li className='items' onClick={() => filterbyCategory("dresses")}>Dresses</li>
+                                <li className='items' onClick={() => filterbyCategory("trousers")}>Trousers</li> */}
                             </ul>
                         )}
                     </li>
                 </ul>
 
                 {/* Kids Dropdown */}
-                <ul className={`list ${isMenuOpen ? "open" : ""}`}>
+                {/* <ul className={`list ${isMenuOpen ? "open" : ""}`}>
                     <li onClick={() => setKidsDropdown(!kidsDropdown)} style={{ cursor: "pointer", position: "relative" }}>
                         Kids {kidsDropdown ? <IoIosArrowUp /> : <IoIosArrowDown />}
                         {kidsDropdown && (
@@ -97,7 +97,7 @@ const Navbar = () => {
                             </ul>
                         )}
                     </li>
-                </ul>
+                </ul> */}
 
                 {/* Search Box */}
                 <form onSubmit={submitHandeler} className={`search-box ${isMenuOpen ? "open" : ""}`}>

@@ -4,4 +4,10 @@ body::-webkit-scrollbar{
 ::-webkit-scrollbar {
     display: none;             
   }
+  li {
+    list-style: none;
+  }
   
+  a {
+    text-decoration: none;
+  } 
