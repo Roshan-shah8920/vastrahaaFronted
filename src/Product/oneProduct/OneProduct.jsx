@@ -7,7 +7,7 @@ const OneProduct = () => {
   const { product } = useContext(AppContext);
   const navigate = useNavigate();
 
-  // Helper Functions
+
   const getFirstProductByCategory = (category) => {
     return product?.filter(item => item.category?.toLowerCase() === category)?.slice(0, 1);
   };
@@ -16,7 +16,7 @@ const OneProduct = () => {
     return product?.filter(item => item?.category?.toLowerCase().includes(category))?.[0];
   };
 
-  // Get Products
+
   const mensProduct = getFirstProductByCategory("jeans mens");
   const mensShirts = getProductContainsCategory("styling shirt mens");
   const womenProduct = getFirstProductByCategory("jeans women");
@@ -31,7 +31,7 @@ const OneProduct = () => {
       <div className="heading22 text-center mt-5">
         <h1>
           {"DISCOVER OUR ONLINE EXCLUSIVE COLLECTIONS".split(" ").map((word, index) => (
-            <span key={index} style={{ animationDelay: `${index * 0.3}s` }}>
+            <span key={index} className="animated-word" style={{ animationDelay: `${index * 0.25}s` }}>
               {word}&nbsp;
             </span>
           ))}
@@ -40,12 +40,13 @@ const OneProduct = () => {
           {"Elevate Your Style: Shop the Freshest Styles from our Online Exclusive Collections"
             .split(" ")
             .map((word, index) => (
-              <span key={index} style={{ animationDelay: `${index * 0.15}s` }}>
+              <span key={index} className="animated-word-light" style={{ animationDelay: `${index * 0.1}s` }}>
                 {word}&nbsp;
               </span>
             ))}
         </p>
       </div>
+
 
       <div className="d-flex justify-content-center gap-4 flex-wrap">
         {/* Men's Jeans */}
@@ -56,6 +57,7 @@ const OneProduct = () => {
                 src={item?.imgSrc}
                 className="card-img-top"
                 alt={item?.title || "Men's Jeans"}
+                style={{ height: "400px" }}
               />
               <div className="label-btn">MENS JEANS</div>
             </div>
@@ -70,6 +72,7 @@ const OneProduct = () => {
                 src={mensShirts?.imgSrc}
                 className="card-img-top"
                 alt={mensShirts?.title || "Men's Shirt"}
+                style={{ height: "400px" }}
               />
               <div className="label-btn">MENS SHIRTS</div>
             </div>
@@ -84,6 +87,7 @@ const OneProduct = () => {
                 src={item?.imgSrc}
                 className="card-img-top"
                 alt={item?.title || "Women's Jeans"}
+                style={{ height: "400px" }}
               />
               <div className="label-btn">WOMEN JEANS</div>
             </div>
@@ -98,6 +102,7 @@ const OneProduct = () => {
                 src={item?.imgSrc}
                 className="card-img-top"
                 alt={item?.title || "Women's Shirt"}
+                style={{ height: "400px" }}
               />
               <div className="label-btn">WOMEN SHIRT</div>
             </div>

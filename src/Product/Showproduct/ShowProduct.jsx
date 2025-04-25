@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import OneProduct from '../oneProduct/OneProduct';
 import FeatureSection from '../FeatureSection/FeatureSection';
 import './ShowProduct.css';
+import VideoComponent from '../../Components/VideoComponent/VideoComponent';
 
 const ShowProduct = () => {
   const { filterData } = useContext(AppContext);
@@ -135,7 +136,8 @@ const ShowProduct = () => {
         </div>
         <button className="btn btn-outline-secondary" onClick={() => scroll(womensScrollRef, 300)}>→</button>
       </div>
-
+      <VideoComponent/>
+      <br />
       <FeatureSection />
     </>
   );

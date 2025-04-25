@@ -11,6 +11,7 @@ const Navbar = () => {
     const { setFilterData, product, logout, isAuthenticated, cart } = useContext(AppContext)
     const [showDropdown, setShowDropdown] = useState(false)
     const [womenDropdown, setWomenDropdown] = useState(false)
+    const [kidsDropdown, setKidsDropdown] = useState(false)
     const [searchTerm, setSearchTerm] = useState("")
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const navigate = useNavigate()
@@ -24,15 +25,18 @@ const Navbar = () => {
         setWomenDropdown(!womenDropdown)
     }
 
+    const filterbyCategory = (cat) => {
+        setFilterData(product?.filter((data) => data?.category?.toLowerCase() === cat.toLowerCase()))
+        setIsMenuOpen(false)
+        setShowDropdown(false)
+        setWomenDropdown(false)
+        setKidsDropdown(false)
+    }
+
     const submitHandeler = (e) => {
         e.preventDefault();
         navigate(`/product/search/${searchTerm}`)
         setSearchTerm("")
-        setIsMenuOpen(false)
-    }
-
-    const filterbyCategory = (cat) => {
-        setFilterData(product?.filter((data) => data?.category?.toLowerCase() === cat.toLowerCase()))
         setIsMenuOpen(false)
     }
 
@@ -56,8 +60,8 @@ const Navbar = () => {
                         Men {showDropdown ? <IoIosArrowUp /> : <IoIosArrowDown />}
                         {showDropdown && (
                             <ul className="submenu">
-                                <li className='items' onClick={() => filterbyCategory("t-shirts")}>T-Shirts</li>
-                                <li className='items' onClick={() => filterbyCategory("Jeans mens")}>Jeans mens</li>
+                                <Link to={"/mens-Shirt"} className='items' onClick={() => filterbyCategory("t-shirts")}>T-Shirts</Link>
+                                <Link to={"/mens-products"} className='items' onClick={() => filterbyCategory("Jeans mens")}>Jeans mens</Link>
                                 <li className='items' onClick={() => filterbyCategory("Blazers")}>Blazers</li>
                                 <li className='items' onClick={() => filterbyCategory("suits")}>Suits</li>
                             </ul>
@@ -71,10 +75,25 @@ const Navbar = () => {
                         Women {womenDropdown ? <IoIosArrowUp /> : <IoIosArrowDown />}
                         {womenDropdown && (
                             <ul className="submenu">
-                                <li className='items' onClick={() => filterbyCategory("Jeans women")}>Jeans women</li>
-                                <li className='items' onClick={() => filterbyCategory("tops")}> Tops</li>
+                                <Link to={"womens-products"} className='items' onClick={() => filterbyCategory("Jeans women")}>Jeans women</Link>
+                                <Link to={"/womens-Shirt "} className='items' onClick={() => filterbyCategory("tops")}>Shirt</Link>
                                 <li className='items' onClick={() => filterbyCategory("dresses")}>Dresses</li>
                                 <li className='items' onClick={() => filterbyCategory("trousers")}>Trousers</li>
+                            </ul>
+                        )}
+                    </li>
+                </ul>
+
+                {/* Kids Dropdown */}
+                <ul className={`list ${isMenuOpen ? "open" : ""}`}>
+                    <li onClick={() => setKidsDropdown(!kidsDropdown)} style={{ cursor: "pointer", position: "relative" }}>
+                        Kids {kidsDropdown ? <IoIosArrowUp /> : <IoIosArrowDown />}
+                        {kidsDropdown && (
+                            <ul className="submenu">
+                                <li className='items' onClick={() => filterbyCategory("kids t-shirts")}>T-Shirts</li>
+                                <li className='items' onClick={() => filterbyCategory("kids jeans")}>Jeans</li>
+                                <li className='items' onClick={() => filterbyCategory("kids jackets")}>Jackets</li>
+                                <li className='items' onClick={() => filterbyCategory("kids suits")}>Suits</li>
                             </ul>
                         )}
                     </li>
@@ -116,8 +135,8 @@ const Navbar = () => {
                     )}
                 </div>
             </div>
-            <Banner/>
-            {/* {location.pathname === "/" && <Banner />} */}
+
+            <Banner />
         </>
     )
 }

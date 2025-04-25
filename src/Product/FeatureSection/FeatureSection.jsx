@@ -6,10 +6,10 @@ import { MdLocalShipping } from "react-icons/md"; // Material Design
 import { useNavigate } from 'react-router-dom';
 
 const FeatureSection = () => {
-    const navigate = useNavigate(); // Using useNavigate hook to navigate programmatically
+    const navigate = useNavigate(); 
 
     const handleNavigate = (path) => {
-        navigate(path); // Navigate to the specified path
+        navigate(path); 
     }
 
   return (

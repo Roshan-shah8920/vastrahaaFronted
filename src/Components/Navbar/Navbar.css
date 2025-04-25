@@ -1,255 +1,147 @@
-/* *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-li{
-    list-style: none;
-}
-a{
-    text-decoration: none;
-}
-
-.list{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-}
-.navbar{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    background-color: #fff;
-    padding: 15px 7%;
-}
-.search-box{
-    display: flex;
-    align-items: center;
-    background: #e2dbdb;
-    padding: 10px 20px;
-    border-radius: 50px;
-}
-.search-box input{
-    padding: 6px;
-    background: transparent;
-    border: 0;
-    outline: 0;
-    color: #fff;
-    max-width: 200px;
-}
-.icon{
-    width: 50px;
-    font-size: 30px;
-}
-
-
-
-.list {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    align-items: center;
-  }
-  
-  .submenu {
-    list-style: none;
-    margin-top: 10px;
-    padding-left: 20px;
-    background-color: #f9f9f9;
-    position: absolute;
-    top: 30px;
-    left: 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    border-radius: 5px;
-    z-index: 100;
-  }
-  
-  .submenu li {
-    padding: 8px 15px;
-    cursor: pointer;
-  }
-  
-  .submenu li:hover {
-    background-color: #eee;
-  }
-  
-  .navbar.sticky {
-    position: sticky;
-    top: 0; 
-    z-index: 1000; 
-    background-color: white; 
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
-    width: 100%;
-    transition: top 0.3s; 
-} */
-
-
-/* Hamburger Button */
-/* .hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    background: none;
-    border: none;
-    gap: 4px;
-  }
-  
-  .hamburger .bar {
-    width: 25px;
-    height: 3px;
-    background-color: #000;
-    transition: all 0.3s ease;
-  }
-   */
- 
-
-  /* General Styling */
+/* Basic Reset */
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 7%;
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  flex-wrap: wrap;
+  padding: 10px 20px;
+  background: white;
   position: sticky;
   top: 0;
-  z-index: 999;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  /* border: 2px solid black; */
 }
 
-.img img {
-  width: 120px;
+.navbar .img img {
+  height: 40px;
+  width: auto;
 }
 
 .hamburger {
   display: none;
   flex-direction: column;
-  cursor: pointer;
-  background: none;
+  gap: 5px;
+  background: transparent;
   border: none;
-  padding: 10px;
+  cursor: pointer;
 }
 
-.bar {
+.hamburger .bar {
   height: 3px;
   width: 25px;
-  background-color: black;
-  margin: 4px 0;
-  transition: 0.3s;
+  background-color: #333;
+  border-radius: 2px;
 }
 
-/* Navigation Lists */
+/* Menus */
 .list {
   display: flex;
-  align-items: center;
-  list-style: none;
   gap: 20px;
+  list-style: none;
 }
 
 .list li {
   position: relative;
-  list-style: none;
+  padding: 10px;
 }
 
-/* Dropdown Styling */
 .submenu {
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: white;
-  box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
-  padding: 10px;
+  background: white;
+  border: 1px solid #eee;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  min-width: 150px;
   z-index: 10;
 }
 
 .submenu .items {
-  padding: 8px;
-  cursor: pointer;
+  padding: 10px 15px;
   white-space: nowrap;
+  color: #333;
+  text-decoration: none;
 }
 
 .submenu .items:hover {
-  background-color: #f0f0f0;
+  background-color: #f5f5f5;
 }
 
-/* Search Box */
+/* Search */
 .search-box {
   display: flex;
   align-items: center;
-  background-color: #f2f2f2; /* light grey background */
-  border-radius: 30px;
-  padding: 8px 16px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* soft shadow */
-  transition: all 0.3s ease;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  padding: 5px 10px;
+  margin: 0 20px;
 }
 
 .search-box input {
   border: none;
   outline: none;
-  padding: 6px 10px;
-  background: transparent;
-  font-size: 16px;
+  padding: 5px;
+  width: 150px;
 }
 
 .search-box .icon {
-  font-size: 20px;
   color: #333;
-  margin-left: 8px;
+  margin-left: 5px;
 }
 
-
-/* User Area */
+/* User Section */
 .user {
   display: flex;
   align-items: center;
-  gap: 15px;
 }
 
-/* Responsive Styling */
-@media (max-width: 768px) {
-  .list {
-    display: none;
+/* Responsive */
+@media (max-width: 1024px) {
+  .hamburger {
+    display: flex;
   }
 
-  .list.open {
-    display: none;
-  }
-
+  .list,
+  .search-box,
   .user {
-    flex-direction: row;
-    justify-content: center;
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    padding: 20px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     gap: 10px;
   }
 
-  /* 🔧 Fix starts here */
-  .search-box {
-    width: auto;              /* Don't force full width */
-    margin: 0;
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .search-box input {
-    width: auto;
-    flex: none;
-    max-width: 150px;         /* Set a max-width */
-  }
-
-  .search-box .icon {
-    font-size: 20px;
-    margin-left: 10px;
+  .list.open,
+  .search-box.open,
+  .user.open {
     display: flex;
-    align-items: center;
+  }
+
+  .submenu {
+    position: relative;
+    top: 0;
+    left: 0;
+    box-shadow: none;
+    border: none;
+  }
+
+  .submenu .items {
+    padding-left: 30px;
   }
 }
-.li{
+
+
+
+li{
   list-style: none;
 }
-a{
-  text-decoration: none;
+.sticky{
+  padding: 10px 4%;
 }

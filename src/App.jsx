@@ -25,6 +25,7 @@ import Admin from './Components/Admin/Admin';
 import AdminOrders from './Components/AdminOrders/AdminOrders';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import VideoComponent from './Components/VideoComponent/VideoComponent';
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -66,6 +67,9 @@ const App = () => {
             <Route path="/express-delivery" element={<ExpressDelivery />} />
             <Route path="/admin/orders" element={<Admin />} />
             <Route path="/admin" element={<AdminOrders />} />
+            <Route path="/video" element={<VideoComponent />} />
+            {/* <Route path="/left" element={</>} /> */}
+            
           </Routes>
           <Footer />
         </>

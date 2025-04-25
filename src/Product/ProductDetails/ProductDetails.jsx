@@ -9,7 +9,7 @@ const ProductDetails = () => {
   const { id } = useParams()
   const { addToCart } = useContext(AppContext)
   const [products, setProducts] = useState()
-  const url = "http://localhost:5000/api"
+  const url = "https://vastrahaat-2.onrender.com/api"
 
   useEffect(() => {
     const fetchProduct = async () => {
