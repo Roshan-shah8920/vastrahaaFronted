@@ -1,84 +1,56 @@
 import React from 'react';
-import "./Footer.jsx";
-import { FaFacebookF, FaXTwitter, FaInstagram, FaYoutube, FaLinkedinIn } from "react-icons/fa6";
+import "./Footer.css";
+import { FaFacebookF, FaXTwitter, FaInstagram, FaYoutube } from "react-icons/fa6";
 
 const Footer = () => {
   return (
+    <footer className="footer bg-white text-dark border-top pt-4">
+      <div className="">
 
-    <footer className=" bg-white shadow-[0_2px_12px_rgba(0,0,0,0.06)] text-gray-900 text-sm border-t pt-10" style={{
-      // backgroundColor:"#ccc"
-    }}>
-
-      <div className="bg-white max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10" style={{
-        padding: "10px",
-      }}>
-        <hr className="border-gray-600" />
-        <div className="container grid grid-cols-1 md:grid-cols-4 gap-10">
-
-          <div
-            className="img mb-3"
-            style={{ marginTop: "-100px" }}
-          >
+        <div className="row gx-5 gy-4 py-4 px-3 px-md-5">
+          {/* Column 1: Logo and Social */}
+          <div className="col-12 col-md-4 d-flex flex-column align-items-center align-items-md-start text-center text-md-start">
             <img
               src="image.png"
-              alt="Profile"
-              style={{
-                width: "200px",
-                height: "auto"
-              }}
+              alt="Logo"
+              style={{ width: "200px", height: "auto" }}
+              className="mb-4"
             />
-
-            <div className="flex items-center justify-center space-x-4 text-xl text-gray-800 mt-4 flex-nowrap" style={{
-              maxWidth: "200px" 
-            }}>
-              <FaFacebookF className="mx-2" />
-              <FaXTwitter className="mx-2" />
-              <FaInstagram className="mx-2" />
-              <FaYoutube className="mx-2" />
+            <div className="d-flex gap-3 fs-5">
+              <FaFacebookF />
+              <FaXTwitter />
+              <FaInstagram />
+              <FaYoutube />
             </div>
           </div>
 
-          <div>
-            <p className="font-semibold mb-3" style={{
-              marginLeft: "32px"
-            }}>NEED HELP?</p>
-            <ul className="li text-gray-700">
-              <li><a href="/return-policy">Returns</a></li>
-              <li><a href="/shipping-policy">Shipping Policy</a></li>
-              <li><a href="/express-delivery">Delivery</a></li>
-              <li><a href="/Contact">Contact Us</a></li>
+          {/* Column 2: Help Links */}
+          <div className="col-12 col-md-4 text-center text-md-start" style={{ marginLeft: "80px" }}>
+            <h5 className="mb-3 fw-semibold">NEED HELP?</h5>
+            <ul className="list-unstyled d-flex flex-column gap-2">
+              <li><a href="/return-policy" className="text-dark text-decoration-none">Returns</a></li>
+              <li><a href="/shipping-policy" className="text-dark text-decoration-none">Shipping Policy</a></li>
+              <li><a href="/express-delivery" className="text-dark text-decoration-none">Delivery</a></li>
+              <li><a href="/Contact" className="text-dark text-decoration-none">Contact Us</a></li>
             </ul>
           </div>
 
-          {/* Column 3 - Join + Socials */}
-          <div>
-            <h4 className="font-semibold mb-3">JOIN THE VASTRAHAAT COMMUNITY</h4>
-            {/* <input
-              type="email"
-              className="w-full border-b border-black py-2 px-1 outline-none placeholder-gray-400"
-              placeholder="youremail@example.com"
-            /> */}
-            <p className="mt-2 text-gray-700">
-              Sign up for updates on the latest VastraHaat collection, campaigns and videos.
+          {/* Column 3: Join Community */}
+          <div className="col-12 col-md-4 text-center text-md-start" style={{ marginLeft: "80px" }}>
+            <h5 className="mb-3 fw-semibold">JOIN THE VASTRAHAAT COMMUNITY</h5>
+            <p className="small mb-2">
+              Sign up for updates on the latest VastraHaat collection, campaigns, and videos.
             </p>
-
-            {/* <h5 className="font-semibold mt-6 mb-2">FIND US ON SOCIAL</h5>
-            <div className="flex items-center space-x-4 text-xl text-gray-800">
-              <FaFacebookF className="mx-2" />
-              <FaXTwitter className="mx-2" />
-              <FaInstagram className="mx-2" />
-              <FaYoutube className="mx-2" />
-              <FaLinkedinIn className="mx-2" />
-            </div> */}
-            <h6>Do you need support? Give us a call. +91 755-062-0981</h6>
+            <p className="small fw-bold mb-0">Need support? Call us at</p>
+            <p className="small">+91 755-062-0981</p>
           </div>
         </div>
-      </div>
 
-      {/* Horizontal Bottom Line */}
-      <hr className="border-gray-300" />
-      <div className="text-center py-4 text-xs text-gray-500">
-        © Copyright 2025 Vastrahaat. All rights reserved. Design by Vastrahaat Distribution By Vastrahaat
+        {/* Bottom Copyright Row */}
+        <hr />
+        <div className="text-center text-muted small py-2">
+          © 2025 Vastrahaat. All rights reserved. Design & Distribution by Vastrahaat.
+        </div>
       </div>
     </footer>
   );
