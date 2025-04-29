@@ -1,3 +1,133 @@
-.li{
-    list-style: none;
-}
+/* Global Styles for Footer */
+footer {
+    background-color: #ffffff;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    color: #1a202c;
+    font-size: 0.875rem;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+  
+  footer hr {
+    border-color: #e2e8f0;
+  }
+  
+  /* Container Styling */
+  footer .container {
+    display: grid;
+    grid-template-columns: 1fr; /* Mobile-first */
+    gap: 2.5rem;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+  }
+  
+  /* Logo and Social Icons Section */
+  footer .img {
+    margin-top: -100px;
+    text-align: center;
+  }
+  
+  footer .img img {
+    width: 200px;
+    height: auto;
+  }
+  
+  footer .img .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem; /* Increased gap for better spacing */
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
+  
+  footer .img .social-icons i {
+    color: #4a5568;
+  }
+  
+  /* NEED HELP Section */
+  footer .help-section {
+    padding-left: 1rem;
+  }
+  
+  footer .help-section p {
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  footer .help-section ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  footer .help-section ul li a {
+    color: #4a5568;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  footer .help-section ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  /* JOIN THE VASTRAHAAT COMMUNITY Section */
+  footer .community-section {
+    text-align: center;
+  }
+  
+  footer .community-section h4 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  footer .community-section p {
+    margin-top: 0.5rem;
+    color: #4a5568;
+  }
+  
+  footer .community-section h6 {
+    margin-top: 1rem;
+    color: #4a5568;
+  }
+  
+  /* Bottom Copyright Section */
+  footer .copyright {
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.75rem;
+    color: #a0aec0;
+  }
+  
+  /* Responsive Design with Media Queries */
+  @media (min-width: 640px) {
+    footer .container {
+      grid-template-columns: 1fr 1fr;
+    }
+  
+    footer .help-section,
+    footer .community-section {
+      text-align: left;
+    }
+  
+    footer .help-section ul {
+      flex-direction: row;
+      justify-content: space-around;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    footer .container {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    footer .container {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }
+  

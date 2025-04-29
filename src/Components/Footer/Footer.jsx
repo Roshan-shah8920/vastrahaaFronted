@@ -1,4 +1,5 @@
 import React from 'react';
+import "./Footer.jsx";
 import { FaFacebookF, FaXTwitter, FaInstagram, FaYoutube, FaLinkedinIn } from "react-icons/fa6";
 
 const Footer = () => {
@@ -41,27 +42,11 @@ const Footer = () => {
             <p className="font-semibold mb-3" style={{
               marginLeft: "32px"
             }}>NEED HELP?</p>
-            <ul className="li space-y-2 text-gray-700">
-              <li><a href="#">Returns</a></li>
-              <li><a href="#">FAQs</a></li>
-              <li><a href="#">Shipping Policy</a></li>
-              <li><a href="#">Return And Cancellation Policy</a></li>
-              <li><a href="#">Contact Us</a></li>
-            </ul>
-          </div>
-
-          {/* Column 2 - ABOUT US */}
-          <div>
-            <p className="font-semibold mb-3" style={{
-              marginLeft: "32px"
-            }}>NEED HELP?</p>
-            <ul className="li space-y-2 text-gray-700">
-             
-              <li><a href="#">Returns</a></li>
-              <li><a href="#">FAQs</a></li>
-              <li><a href="#">Shipping Policy</a></li>
-              <li><a href="#">Return And Cancellation Policy</a></li>
-              <li><a href="#">Contact Us</a></li>
+            <ul className="li text-gray-700">
+              <li><a href="/return-policy">Returns</a></li>
+              <li><a href="/shipping-policy">Shipping Policy</a></li>
+              <li><a href="/express-delivery">Delivery</a></li>
+              <li><a href="/Contact">Contact Us</a></li>
             </ul>
           </div>
 

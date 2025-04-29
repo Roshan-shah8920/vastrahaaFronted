@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router-dom';
 
 const OneProduct = () => {
   const { product } = useContext(AppContext);
+  console.log("x", product);
+  
   const navigate = useNavigate();
 
 

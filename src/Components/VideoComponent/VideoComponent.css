@@ -155,3 +155,36 @@
     background-color: darkred;
   }
   
+
+  @media (max-width: 768px) {
+    .img-box {
+      width: 90%;
+      height: auto;
+      aspect-ratio: 16/9;
+    }
+  
+    .show {
+      padding: 15px;
+    }
+  
+    .close-btn {
+      padding: 6px 10px;
+      font-size: 14px;
+    }
+  }
+  @media (max-width: 480px) {
+    .img-box {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16/9;
+    }
+  
+    .show {
+      padding: 10px;
+    }
+  
+    .close-btn {
+      padding: 5px 8px;
+      font-size: 12px;
+    }
+  }  
